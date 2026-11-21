@@ -25,12 +25,14 @@ export async function fetchNotes(
   page: number,
   perPage: number,
   search: string,
+  tag?: string,
 ): Promise<FetchNotesResponse> {
   const { data } = await api.get<FetchNotesResponse>("/notes", {
     params: {
       page,
       perPage,
       search,
+      tag,
     },
   });
   return data;
